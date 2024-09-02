@@ -1,0 +1,21 @@
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+    name: my-project-3-358101-cluster-1
+    annotations:  
+      cnrm.cloud.google.com/project-id: my-project-3-358101
+    namespace: config-control
+spec:
+ enableAutopilot: true
+ location: us-west1 
+ maintenancePolicy:
+  dailyMaintenanceWindow:
+    startTime: 00:00
+  maintenanceExclusion:
+  - endTime: 2024-10-3T00:00:00Z
+    exclusionName: testnew
+    exclusionOptions:
+      scope: NO_UPGRADES
+    startTime: 2024-09-05T00:00:00Z
+ releaseChannel:
+    channel: STABLE
